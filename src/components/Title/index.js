@@ -1,19 +1,10 @@
-import React, { useState } from 'react';
+/* eslint-disable react/prop-types */
+import React from 'react';
 import { Text } from 'react-native';
-import styles from './styles';
+import styles from '../Title/styles';
 
-function Title({ text }) {
-  const [stateText, setText] = useState('Default state');
-
-  const onTextPress = () => {
-    setText('Update state');
-  };
-
-  return (
-    <Text onPress={onTextPress} style={styles.title}>
-      {stateText}
-    </Text>
-  );
+function Title({ text, style }) {
+  return <Text style={[styles.title, style]}>{text}</Text>;
 }
 
 export default Title;
